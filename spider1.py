@@ -44,7 +44,7 @@ def get_info(url):
     
 
 if __name__ == '__main__':
-    urls = ['http://bj.xiaozhu.com/search-duanzufang-p{}-0/'.format(number) for number in range(0,1)]
+    urls = ['http://bj.xiaozhu.com/search-duanzufang-p{}-0/'.format(number) for number in range(0,25)]
     for url in urls:
         get_url(url)
         time.sleep(60)
