@@ -24,12 +24,12 @@ def get_info(url):
     wb_data = requests.get(url,headers = headers)
     soup = BeautifulSoup(wb_data.text,'html.parser')
     
-    titles = soup.select('.pho_info > h4 > em')
-    addresses = soup.select('.pho_info > p > span.pr5')
-    prices = soup.select('#pricePart > .day_l > span')
-    imgs = soup.select('.member_pic > a > img')
-    names = soup.select('.js_box > a.lorder_name')
-    sexs = soup.select('.member_pic > div.member_ico')
+    titles = soup.select('div.pho_info h4 em')
+    addresses = soup.select('div.pho_info span.pr5')
+    prices = soup.select('#pricePart .day_l span')
+    imgs = soup.select('.member_pic a img')
+    names = soup.select('.js_box a.lorder_name')
+    sexs = soup.select('.member_pic > div')
     
     for title,address,price,img,name,sex in zip(titles,addresses,prices,imgs,names,sexs):
         data = {
